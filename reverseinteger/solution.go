@@ -17,8 +17,11 @@ func reverse(numero int) int {
 	var sliceDigitos []int
 	var resultado int
 	var reverseStr string
+	var negativo bool
 	if numero < 0 {
-		strNumero = strNumero[1:]
+		numero = numero * -1
+		strNumero = strconv.Itoa(numero)
+		negativo = true
 	}
 	for i := 0; i < len(strNumero); i++ {
 		if i == 0 {
@@ -39,10 +42,13 @@ func reverse(numero int) int {
 	if err != nil {
 		fmt.Println("error!")
 	}
+	if negativo {
+		return numOk * -1
+	}
 	return numOk
 }
 
 func main() {
-	numero := 12345678
+	numero := -654321
 	fmt.Println(reverse(numero))
 }
