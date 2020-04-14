@@ -2,10 +2,16 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
 func reverse(numero int) int {
+	if numero > math.MaxInt32 {
+		return 0
+	} else if numero < math.MinInt32 {
+		return 0
+	}
 
 	strNumero := strconv.Itoa(numero)
 	var sliceDigitos []int
@@ -34,6 +40,6 @@ func reverse(numero int) int {
 }
 
 func main() {
-	numero := 2458970
+	numero := 2147483647
 	fmt.Println(reverse(numero))
 }
