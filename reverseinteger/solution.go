@@ -17,6 +17,9 @@ func reverse(numero int) int {
 	var sliceDigitos []int
 	var resultado int
 	var reverseStr string
+	if numero < 0 {
+		strNumero = strNumero[1:]
+	}
 	for i := 0; i < len(strNumero); i++ {
 		if i == 0 {
 			resultado = numero % 10
@@ -40,6 +43,6 @@ func reverse(numero int) int {
 }
 
 func main() {
-	numero := 2147483647
+	numero := 12345678
 	fmt.Println(reverse(numero))
 }
