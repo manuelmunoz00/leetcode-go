@@ -1,4 +1,4 @@
-package main
+package reverseinteger
 
 import (
 	"fmt"
@@ -6,7 +6,8 @@ import (
 	"strconv"
 )
 
-func reverse(numero int) int {
+// Reverse func
+func Reverse(numero int) int {
 	if numero > math.MaxInt32 {
 		return 0
 	} else if numero < math.MinInt32 {
@@ -48,7 +49,7 @@ func reverse(numero int) int {
 	return numOk
 }
 
-func main() {
-	numero := -654321
-	fmt.Println(reverse(numero))
-}
+// func main() {
+// 	numero := 120
+// 	fmt.Println(Reverse(numero))
+// }
