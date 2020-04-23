@@ -8,12 +8,6 @@ import (
 
 // Reverse func
 func Reverse(numero int) int {
-	if numero > math.MaxInt32 {
-		return 0
-	} else if numero < math.MinInt32 {
-		return 0
-	}
-
 	strNumero := strconv.Itoa(numero)
 	var sliceDigitos []int
 	var resultado int
@@ -46,6 +40,13 @@ func Reverse(numero int) int {
 	if negativo {
 		return numOk * -1
 	}
+
+	if numOk > math.MaxInt32 {
+		return 0
+	} else if numOk < math.MinInt32 {
+		return 0
+	}
+
 	return numOk
 }
 
