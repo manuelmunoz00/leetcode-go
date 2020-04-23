@@ -12,6 +12,7 @@ var isReverseTests = []struct {
 	{-123, -321},
 	{654321, 123456},
 	{1534236469, 0},
+	{-2147483648, 0},
 }
 
 func TestReverse(t *testing.T) {

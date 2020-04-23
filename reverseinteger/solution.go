@@ -37,14 +37,15 @@ func Reverse(numero int) int {
 	if err != nil {
 		fmt.Println("error!")
 	}
-	if negativo {
-		return numOk * -1
-	}
 
 	if numOk > math.MaxInt32 {
 		return 0
 	} else if numOk < math.MinInt32 {
 		return 0
+	}
+
+	if negativo {
+		return numOk * -1
 	}
 
 	return numOk
