@@ -9,7 +9,7 @@ import (
 
 // RomanToInt Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
 func RomanToInt(roman string) int {
-	roman = strings.ToUpper(roman)
+	// roman = strings.ToUpper(roman)
 	// Analisis de las excepciones y se reemplaza por el valor con un *
 	if strings.Contains(roman, "CM") {
 		roman = strings.ReplaceAll(roman, "CM", "900*")
@@ -32,27 +32,23 @@ func RomanToInt(roman string) int {
 
 	// Recorrer el resto del string y analizando los casos, reemplazando el caracter por el valor con *
 	runes := []rune(roman)
+	// var existe bool
 	for i := 0; i < len(runes); i++ {
 		if unicode.IsLetter(runes[i]) {
-			if strings.Contains(roman, "I") {
+			switch letra := string(runes[i]); letra {
+			case "I":
 				roman = strings.ReplaceAll(roman, "I", "1*")
-			}
-			if strings.Contains(roman, "V") {
+			case "V":
 				roman = strings.ReplaceAll(roman, "V", "5*")
-			}
-			if strings.Contains(roman, "X") {
+			case "X":
 				roman = strings.ReplaceAll(roman, "X", "10*")
-			}
-			if strings.Contains(roman, "L") {
+			case "L":
 				roman = strings.ReplaceAll(roman, "L", "50*")
-			}
-			if strings.Contains(roman, "C") {
+			case "C":
 				roman = strings.ReplaceAll(roman, "C", "100*")
-			}
-			if strings.Contains(roman, "D") {
+			case "D":
 				roman = strings.ReplaceAll(roman, "D", "500*")
-			}
-			if strings.Contains(roman, "M") {
+			case "M":
 				roman = strings.ReplaceAll(roman, "M", "1000*")
 			}
 		}
@@ -65,7 +61,7 @@ func RomanToInt(roman string) int {
 	// Se realiza split para convertir el string en slice de strings y
 	contenidoFinal := strings.Split(roman, "*")
 	var total int
-	fmt.Println(contenidoFinal)
+	// fmt.Println(contenidoFinal)
 	for _, numero := range contenidoFinal {
 		// por cada elemento convertir a entero
 		parcial, err := strconv.Atoi(numero)
