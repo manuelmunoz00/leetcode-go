@@ -9,8 +9,8 @@ var isIntegerRoman = []struct {
 	roman  string
 	numero int
 }{
-	{"III", 3},
 	{"IV", 4},
+	{"III", 3},
 	{"MM", 2000},
 	{"LVIII", 58},
 	{"MCMXCIV", 1994},
